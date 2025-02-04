@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Bhoxhz MaE mApagMaHal &lt;3&lt;3</title>
+  <script src="script/script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+        <style>
+    @keyframes fadeinout {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      30% {
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(50px);
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="mm" src="audio/mm.mp3" controls></audio>
+  <section class="container">
+    <h3>Happy Valentines<br>Ate Mae </h3>
+    <div class="info">
+      <div class="fade-in-out" style="animation-delay:2.7s;">I was enchanted to meet you</div>
+      <div class="fade-in-out" style="animation-delay: 7.7s;">Please don't be in love with someone else</div>
+      <div class="fade-in-out" style="animation-delay: 13.5s;">Please don't have somebody waiting on you</div>
+      <div class="fade-in-out" style="animation-delay: 19.8s;">Please don't be in love with someone else</div>
+      <div class="fade-in-out" style="animation-delay: 25.3s;">Please don't have somebody waiting on you</div>
+      <div class="fade-in-out" style="animation-delay: 31.2s;">This night is flawless, don't you let it go</div>
+      <div class="fade-in-out" style="animation-delay: 38s;">I'm wonderstruck, dancing around all alone</div>
+      <div class="fade-in-out" style="animation-delay: 44.6s;">I'll spend forever wondering if you knew</div>
+      <div class="fade-in-out" style="animation-delay: 50s;">I was enchanted to meet you</div>
+      <div class="fade-in-out" style="animation-delay: 56.3s;">Please don't be in love with someone else</div>
+      <div class="fade-in-out" style="animation-delay: 61s;">Please don't have somebody waiting on you</div>
+      <div class="fade-in-out" style="animation-delay: 65s;">Hi Happy Valentines Hehe :></div>
+    </div>
+  </section>
+
+  <div id="book">
+    <input type="checkbox" id="five">
+    <div id="page5" class="page">
+      <div class="front"></div>
+      <div class="back">Gray loves you</div>
+      <label for="five"></label>
+    </div>
+
+    <input type="checkbox" id="four">
+    <div id="page4" class="page">
+      <div class="front"></div>
+      <div class="back">grateful to have you by my side :></div>
+      <label for="four"></label>
+    </div>
+
+    <input type="checkbox" id="three">
+    <div id="page3" class="page">
+      <div class="front"></div>
+      <div class="back">I'm so grateful to have you in my life. You're always there to make me smile and I feel so</div>
+      <label for="three"></label>
+    </div>
+
+    <input type="checkbox" id="two">
+    <div id="page2" class="page">
+      <div class="front"></div>
+      <div class="back">I hope this letter finds you well. Happy Valentine's Day! Just wanted to say that you make every day feel like a holiday and </div>
+      <label for="two"></label>
+    </div>
+
+    <input type="checkbox" id="one">
+    <div id="page1" class="page">
+      <div class="front">Book for Mae</div>
+      <div class="back">Dear Mae :></div>
+      <label for="one"></label>
+
+    </div>
+  </div>
+  <div class="container2">
+    <button class="left-middle" onclick="location.href='portrait.html'">Click Me :></button>
+  </div>
+
+
+</body>
+<script>
+  const audio = document.getElementById("mm");
+  const animationElements = document.querySelectorAll(".fade-in-out");
+
+  audio.addEventListener("play", function() {
+    animationElements.forEach(function(animation) {
+      animation.style.animationPlayState = "running";
+    });
+  });
+
+  audio.addEventListener("pause", function() {
+    animationElements.forEach(function(animation) {
+      animation.style.animationPlayState = "paused";
+    });
+  });
+</script>
+
+</html>

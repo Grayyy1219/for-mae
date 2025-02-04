@@ -1,0 +1,260 @@
+body {
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  background-color: beige;
+}
+input {
+  visibility: hidden;
+}
+h3 {
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  font-family: "Courier New", Courier, monospace;
+  transform: translate(5%, -180%);
+  white-space: nowrap;
+  background-color: pink;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+.container {
+  position: relative;
+  text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+audio {
+  transform: translate(45%, 10%);
+}
+.info {
+  padding: 225px;
+  position: absolute;
+  top: 30%;
+  left: 4.5%;
+  white-space: nowrap;
+}
+.fade-in-out {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: absolute;
+  top: 20%;
+  left: 4.5%;
+  opacity: 0;
+  animation: fadeinout 8s linear;
+  animation-play-state: paused;
+}
+#book {
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  left: 45%;
+  top: 25vh;
+  perspective: 100vw;
+}
+#book:before {
+  width: 2%;
+  height: 100%;
+  background: #222;
+  content: "";
+  position: absolute;
+  left: 49%;
+  top: 0;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.75);
+  outline: 1px solid black;
+}
+.page {
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at 0% 100%, #777, #ddd 70%);
+  outline: 1px solid black;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: z-index 0.01s linear 1s, transform 2s linear;
+  transform-origin: 0% 50%;
+  z-index: 5;
+  cursor: pointer;
+  font-family: monospace;
+  text-align: center;
+  line-height: 50vh;
+}
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-family: monospace;
+  text-align: center;
+  line-height: 50vh;
+  opacity: 0;
+  transition: opacity 0.1s linear 1s;
+}
+.front {
+  opacity: 1;
+}
+.back {
+  transform: scaleX(-1);
+}
+label {
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+input:checked + .page {
+  transform: rotateY(-180deg);
+}
+input:checked + .page .front {
+  opacity: 0;
+}
+input:checked + .page .back {
+  opacity: 1;
+}
+#five:checked + .page {
+  z-index: 5;
+}
+#four:checked + .page {
+  z-index: 4;
+}
+#three:checked + .page {
+  z-index: 3;
+}
+#two:checked + .page {
+  z-index: 2;
+}
+#one:checked + .page {
+  z-index: 1;
+}
+#page1 .front {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3vh;
+  letter-spacing: 1vh;
+  line-height: 70vh;
+  font-weight: 900;
+  text-align: center;
+  color: magenta;
+  animation: cover 10s linear infinite;
+  background: url("../pictures/p.png");
+  background-size: 100% 50vh;
+}
+@keyframes cover {
+  0% {
+    color: magenta;
+  }
+  20% {
+    color: lime;
+  }
+  40% {
+    color: dodgerblue;
+  }
+  60% {
+    color: gold;
+  }
+  80% {
+    color: cyan;
+  }
+  100% {
+    color: magenta;
+  }
+}
+#page1 .back {
+  font-size: 3vh;
+  font-size: medium;
+  line-height: 2;
+  color: rgb(15, 0, 0);
+  background: #a6aeed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+#page2 .front {
+  font-size: 3vh;
+  font-size: medium;
+  color: rgb(15, 0, 0);
+  background: url("../pictures/pic1.png");
+  background-size: 100% 50vh;
+}
+#page2 .back {
+  font-size: 3vh;
+  font-size: medium;
+  line-height: 2;
+  color: rgb(15, 0, 0);
+  background: #fcb7b7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+#page3 .front {
+  font-size: 25vh;
+  font-size: medium;
+  color: rgb(15, 0, 0);
+  background: url("../pictures/pic2.png");
+  background-size: 100% 50vh;
+}
+#page3 .back {
+  font-size: 3vh;
+  font-size: medium;
+  line-height: 2;
+  color: rgb(15, 0, 0);
+  background: #a6aeed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+#page4 .front {
+  font-size: 25vh;
+  font-size: medium;
+  color: rgb(15, 0, 0);
+  background: url("../pictures/pic3.png");
+  background-size: 100% 50vh;
+}
+#page4 .back {
+  font-size: 3vh;
+  font-size: medium;
+  line-height: 2;
+  color: rgb(15, 0, 0);
+  background: #fcb7b7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+#page5 .front {
+  font-size: 25vh;
+  color: rgb(15, 0, 0);
+  background: url("../pictures/pic4.png");
+  background-size: 100% 50vh;
+}
+#page5 .back {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3vh;
+  letter-spacing: 0vh;
+  line-height: 70vh;
+  font-weight: 900;
+  text-align: center;
+  color: magenta;
+  animation: cover 10s linear infinite;
+  background: url("../pictures/p.png");
+  background-size: 100% 50vh;
+}
+.container2 {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.left-middle {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+}
